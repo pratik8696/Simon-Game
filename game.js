@@ -8,11 +8,21 @@ var i = 0;
 var k = 0;
 var j = 0;
 
+
+
+$("h1").on("click", function(event) {
+  if (k != 1) {
+    nextSequence();
+    $("body").removeClass("game-over");
+    k = 1;
+  }
+});
+
 $(document).on("keypress", function(event) {
   if (j != 1) {
     nextSequence();
     $("body").removeClass("game-over");
-    j = 1
+    j = 1;
   }
 });
 
@@ -42,17 +52,17 @@ function checkAnswer(currentlevel) {
         nextSequence();
       }, 1000);
     }
-  } else {
-    gameOver();
   }
+  else{
+        gameOver();
+      }
 }
-
 
 function gameOver() {
   console.log("fail");
+  document.querySelector("h1").innerHTML="Game Over Chomu 😜, Click on the heading to Restart";
   var wrong = "sounds/wrong.mp3";
   sound(wrong);
-  $("h1").text("Game Over Chomu 😜, Press Any Key to Restart");
   $("body").addClass("game-over");
   setTimeout(function() {
     $("body").addClass("game-over");
@@ -76,12 +86,14 @@ function gameOver() {
     $("body").addClass("game-over");
   }, 700);
   j = 0;
+  k=0
   count = 0;
   gamePattern = [];
   userClickedPattern = [];
 }
 
-function nextSequence() {
+function nextSequence()
+{
   userClickedPattern = [];
   count++;
   $("h1").text("level " + count);

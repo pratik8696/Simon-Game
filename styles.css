@@ -1,15 +1,20 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  font-family:Arial;
 }
 footer{
   font-family:Arial;
   color:white;
   margin:50px;
 }
+.hide{
+  color:white;
+}
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
+  line-height:2;
   margin:  5%;
   color: #FEF2BF;
 }
